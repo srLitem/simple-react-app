@@ -25,10 +25,10 @@ class App extends Component {
 
     person.name = event.target.value;
 
-    const persons = [...this.state.persons];
-    persons[personIndex] = person;
+    const newPersons = [...this.state.persons];
+    newPersons[personIndex] = person; // Updating the person with the found index
 
-    this.setState({persons:persons});
+    this.setState({persons:newPersons});
   }
 
   // Delete the selected item
