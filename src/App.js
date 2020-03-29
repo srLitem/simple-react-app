@@ -15,19 +15,23 @@ class App extends Component {
 
   // Change the name by typing
   nameChangeHandler = (event, id) => {
+    // Finding the index of the person that will be modified
     const personIndex = this.state.persons.findIndex(p => {
       return p.id === id;
     });
-
+    // New const to set the name of the person that will be modified
     const person = {
       ...this.state.persons[personIndex]
     };
 
+    // Set the name of the person in the new const
     person.name = event.target.value;
 
+    // New array to be changed with the modified const
     const newPersons = [...this.state.persons];
     newPersons[personIndex] = person; // Updating the person with the found index
 
+    // Assigning the modified array to the current state
     this.setState({persons:newPersons});
   }
 
